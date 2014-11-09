@@ -5,30 +5,14 @@ function creatDatabase($link,$db_name) {
 	return mysql_query($sql, $link);
 }
 
-function creatRootTable($link) {
-	$action  ="CREATE TABLE `rootTable`(
+function creatUserTable($link,$table_name) {
+	$action  ="CREATE TABLE `$table_name`(
 		`name` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`username` VARCHAR(20) NOT NULL PRIMARY KEY,
 		`password` VARCHAR(20) NOT NULL,
-		`user_id` VARCHAR(20) NOT NULL,
 		`cellphone`  VARCHAR(20) NOT NULL,
-		`department`  VARCHAR(20) NOT NULL,
-		`department_id`  VARCHAR(100) NOT NULL,
-		`create_time`  VARCHAR(100) NOT NULL,
-		`update_time`  VARCHAR(100) NOT NULL
-		);";
-	return mysql_query($action, $link);
-}
-
-function creatUserTable($link) {
-	$action  ="CREATE TABLE `userTable`(
-		`name` VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
-		`username` VARCHAR(20) NOT NULL PRIMARY KEY,
-		`password` VARCHAR(20) NOT NULL,
-		`user_id` VARCHAR(20) NOT NULL,
-		`telephone`  VARCHAR(20) NOT NULL,
-		`cellphone`  VARCHAR(20) NOT NULL,
-		`department`  VARCHAR(20) NOT NULL,
+		`email`  VARCHAR(20) NOT NULL,
+		`department`  VARCHAR(20)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`department_id`  VARCHAR(100) NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL,
 		`update_time`  VARCHAR(100) NOT NULL
@@ -43,11 +27,10 @@ function creatRootCourse($link,$table_name) {
 		`create_time`  VARCHAR(100) NOT NULL,
 		`update_time`  VARCHAR(100) NOT NULL
 		);";
-	
 	return mysql_query($action, $link);
 }
 
-function creatRootCourse($link,$table_name) {
+function creatUserCourse($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
 		`course_id` VARCHAR(100) NOT NULL PRIMARY KEY,
 		`course_name`  VARCHAR(100) NOT NULL,

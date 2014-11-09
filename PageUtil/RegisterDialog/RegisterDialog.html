@@ -1,0 +1,46 @@
+<div>
+	<script type='text/javascript' src='PageUtil/RegisterDialog/RegisterDialog.js'></script>
+	<link rel='stylesheet' href='PageUtil/RegisterDialog/RegisterDialog.css'>
+</div>
+<div id="RegisterDialogView" class="RegisterDialogView">
+	<script type="text/javascript">
+    	dialogInit();
+	</script>
+	<div id="RegisterViewBox" class="RegisterView">
+		<div class="indxeBoxInput">
+			<h2>註冊帳號</h2>
+		</div>
+		<div class="indxeBoxInput">
+			名字：<input type="text" size="20" id="RegisterViewBoxName" class="loginInput" />
+		</div>
+		<div class="indxeBoxInput">
+			帳號：<input type="text" size="20" id="RegisterViewBoxUsername" class="loginInput" />
+		</div>
+		<div class="indxeBoxInput">
+			密碼：<input type="password" size="20" id="RegisterViewBoxPassword" class="loginInput" />
+		</div>
+		<div class="indxeBoxInput">
+			確認密碼：<input type="password" size="20" id="RegisterViewBoxPassword2" class="loginInput" />
+		</div>
+		<div class="indxeBoxInput">
+			聯絡電話：<input type="text" size="20" id="RegisterViewBoxPhone" class="loginInput" />
+		</div>
+		<div class="indxeBoxInput">
+			信箱：<input type="text" size="20" id="RegisterViewBoxEmail" class="loginInput" />
+		</div>
+		<div class="indxeBoxInput">
+			科系：
+		   	<select id="RegisterViewBoxDepartment" onChange="setDepartment(this)" class="indxeBoxInputSelect">
+		   	</select>
+		</div>
+		<div class="indxeBoxInput">
+		   	身分：
+		   	<select id="RegisterViewBoxIdentity" onChange="setIdentity(this)" class="indxeBoxInputSelect">
+		   	</select>
+		</div>
+		<div class="indxeBoxInput">
+			<input type="button" value="取消" onclick="dialogCancel()" class="indexBoxBt" />
+			<input type="button" value="註冊" onclick="dialogRegister()" class="indexBoxBt" />
+		</div>
+	</div>
+</div>
