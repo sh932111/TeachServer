@@ -1,6 +1,7 @@
 <?php
 include "../database/database_util.php" ;
 include "../database/database_insert.php" ;
+include "../database/database_create.php" ;
 
 header('Content-Type: text/html; charset=utf8');
 
@@ -24,10 +25,10 @@ mysql_query("SET NAMES 'utf8'",$link);
 
 if (mysql_select_db('TeachUserDB')) {
 	if ($identity == 1) {
-		registerStatus(registerUser($link,"userTable",$name,$username,$password,$cellphone,$email,$department,$department_id,$create_time,$update_time));
+		registerStatus($link,$identity,$username,registerUser($link,"userTable",$name,$username,$password,$cellphone,$email,$department,$department_id,$create_time,$update_time));
 	}
 	else {
-		registerStatus(registerUser($link,"rootTable",$name,$username,$password,$cellphone,$email,$department,$department_id,$create_time,$update_time));
+		registerStatus($link,$identity,$username,registerUser($link,"rootTable",$name,$username,$password,$cellphone,$email,$department,$department_id,$create_time,$update_time));
 	}
 }
 else {
@@ -37,10 +38,11 @@ else {
 	echo json_encode($res);
 	exit();
 }
-function registerStatus($result) {
+function registerStatus($link,$identity,$username,$result) {
 	$message = "註冊失敗！帳號已存在！";
 	if ($result) {
 		$message = "註冊成功！請登入試試看！";
+		createTable($link,$identity,$username);
 	}
 	$data["message"] = $message;
 	$data["result"] = $result;
@@ -49,4 +51,20 @@ function registerStatus($result) {
 	mysql_close($link);
 	exit();
 }
+function createTable($link,$identity,$username) {
+	if ($identity == 1) {
+		if (mysql_select_db('ClientCourseDB')) {
+			creatUserCourse($link,$username);
+		}
+		if (mysql_select_db('ClientCourseDataDB')) {
+			creatClientCourseData($link,$username);
+		}
+	}
+	else {
+		if (mysql_select_db('TeachCourseDB')) {
+			creatRootCourse($link,$username);
+		}
+	}
+}
+
 ?>
