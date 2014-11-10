@@ -1,9 +1,11 @@
-function onload() {
+function init() {
 	setUI();
 }
 
 function setUI() {
 	setPageUtil('#pgHeader','PageUtil/Header/Header.html');
+	setPageUtil('#pgLeft','TeacherUtil/LeftBar/LeftBar.html');
+	setPageUtil('#pgFooter','PageUtil/Footer/Footer.html');
 }
 
 function setPageUtil(page_id, page_link) {
