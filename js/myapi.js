@@ -1,6 +1,6 @@
-var registerApi = "php/user/register.php";
-var loginApi = "php/user/login.php";
-var getDepartmentApi = "php/user/get_department.php";
+var registerApi = "php/member/register.php";
+var loginApi = "php/member/login.php";
+var getDepartmentApi = "php/member/get_department.php";
 
 function callApi(post_data,api,callback) {
 	var xmlhttp = new XMLHttpRequest();

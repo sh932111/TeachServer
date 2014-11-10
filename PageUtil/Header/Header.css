@@ -6,9 +6,18 @@
 	border-radius: 10px 10px 0px 0px;
 }
 .headerTitle {
-	margin-top: 5%;
+	margin-top: 6%;
 	width: auto;
 	font-size: 24px;
 	color:#FFFFFF;
 	font-family:微軟正黑體;
+}
+.headerLogo {
+	float: left;
+	height: 100%;
+	width: 15%;
+}
+.headerLogo img{
+	margin: 10%;
+	height: 80%;
 }

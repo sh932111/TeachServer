@@ -59,11 +59,13 @@ function createTable($link,$identity,$username) {
 		if (mysql_select_db('ClientCourseDataDB')) {
 			creatClientCourseData($link,$username);
 		}
+		mkdir("../user/".$username."/");
 	}
 	else {
 		if (mysql_select_db('TeachCourseDB')) {
 			creatRootCourse($link,$username);
 		}
+		mkdir("../root/".$username."/");
 	}
 }
 
