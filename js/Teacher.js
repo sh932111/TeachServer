@@ -4,6 +4,7 @@ function init() {
 
 function setUI() {
 	setPageUtil('#pgHeader','PageUtil/Header/Header.html');
+	setPageUtil('#pgMain','TeacherUtil/CreatePage/CreatePage.html');
 	setPageUtil('#pgLeft','TeacherUtil/LeftBar/LeftBar.html');
 	setPageUtil('#pgFooter','PageUtil/Footer/Footer.html');
 }
