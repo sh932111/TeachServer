@@ -1,6 +1,6 @@
 <?php
-include "database/database_create.php" ;
-include "database/database_util.php" ;
+include "../database/database_create.php" ;
+include "../database/database_util.php" ;
 
 header('Content-Type: text/html; charset=utf8');
 $link = initDatabase();
@@ -14,8 +14,10 @@ creatDatabase($link,"ClientCourseDB");
 creatDatabase($link,"ClientCourseDataDB");
 
 if (mysql_select_db('TeachUserDB')) {
-	creatUserTable($link,"userTable");
 	creatUserTable($link,"rootTable");
+	creatUserTable($link,"userTable");
+	mkdir("../root/");
+	mkdir("../user/");
 }
 
 ?>

@@ -24,6 +24,7 @@ function creatRootCourse($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
 		`course_id` VARCHAR(100) NOT NULL PRIMARY KEY,
 		`course_name`  VARCHAR(100) NOT NULL,
+		`outline`  VARCHAR(9999) NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL,
 		`update_time`  VARCHAR(100) NOT NULL
 		);";
@@ -34,6 +35,7 @@ function creatUserCourse($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
 		`course_id` VARCHAR(100) NOT NULL PRIMARY KEY,
 		`course_name`  VARCHAR(100) NOT NULL,
+		`outline`  VARCHAR(9999) NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL
 		);";
 	
