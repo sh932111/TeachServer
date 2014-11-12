@@ -63,6 +63,7 @@
 	height: 100%;
 }
 .CreatePageItemframe {
+	display:inline-block;
 	background-color: #ccf5c4;
 	margin-left: 10%;
 	margin-bottom: 5%;
@@ -70,12 +71,17 @@
 	height: 200px;
 	border-radius: 0px 0px 5px 5px;
 }
-.CreatePageUpload {
+.CreatePageUploadView {
 	margin-top: 10px;
 	width: 100%;
 	height: 50px;
 	text-align: center;
 }
-.CreatePageUpload img {
+#CreatePageUpload {
+	margin:0 auto;
+	width: 50px;
+	height: 100%;
+}
+#CreatePageUpload img {
 	height: 100%;
 }

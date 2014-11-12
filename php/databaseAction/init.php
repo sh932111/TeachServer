@@ -16,6 +16,7 @@ creatDatabase($link,"ClientCourseDataDB");
 if (mysql_select_db('TeachUserDB')) {
 	creatUserTable($link,"rootTable");
 	creatUserTable($link,"userTable");
+	creatAllCourseData($link,"courseData");
 	mkdir("../root/");
 	mkdir("../user/");
 }

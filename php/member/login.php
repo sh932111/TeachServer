@@ -30,6 +30,7 @@ else {
 	$data["result"] = false;
 	$res["data"] = $data;
 	echo json_encode($res);
+	mysql_close($link);
 	exit();
 }
 

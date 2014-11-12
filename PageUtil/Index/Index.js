@@ -21,7 +21,12 @@ function login() {
 	callApi(post_data,loginApi,function(user_data){
 		alert(user_data.message);
 		if (user_data.result) {
-			location.href = 'Teacher.html';
+			if (loginIdentityId == 0) {
+				location.href = 'Teacher.html';
+			}
+			else {
+				location.href = 'Student.html';
+			}
 		}
 	});
 }
