@@ -22,10 +22,16 @@ if (mysql_select_db('TeachUserDB')) {
 			$name = $record['name'];
 			$username = $record['username'];
 			$cellphone = $record['cellphone'];
+			$email = $record['email'];
+			$department = $record['department'];
+			$department_id = $record['department_id'];
 			
 			$data["name"] = $name;
 			$data["username"] = $username;
 			$data["cellphone"] = $cellphone;
+			$data["email"] = $email;
+			$data["department"] = $department;
+			$data["department_id"] = $department_id;
 
 			$list[$i] = $data;
 
