@@ -2,6 +2,7 @@ var registerApi = "php/member/register.php";
 var loginApi = "php/member/login.php";
 var getDepartmentApi = "php/member/get_department.php";
 var addTeachCourseApi = "php/member/add_teach_course.php";
+var getAllTeacherApi = "php/member/get_all_teacher.php";
 
 function callApi(post_data,api,callback) {
 	var xmlhttp = new XMLHttpRequest();
@@ -12,6 +13,7 @@ function callApi(post_data,api,callback) {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) 
         {
             var return_data = xmlhttp.responseText;
+            console.log(return_data);
             var get_json = JSON.parse(return_data);
             var user_data = get_json.data;
             callback(user_data);

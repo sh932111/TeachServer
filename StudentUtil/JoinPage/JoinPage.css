@@ -1,0 +1,50 @@
+.JoinPageView {
+	width: 100%;
+	height: 100%;
+	display:inline-block;
+}
+#JoinPageViewBox {
+	margin-left: 10%;
+	margin-top: 8%;
+	width: 80%;
+	height: 84%;
+	background-color: #e0ffff;
+	border-radius: 8px;
+	overflow-x: hidden; 
+	overflow-y: auto; 
+	white-space: nowrap;
+}
+.JoinPageViewBoxTitle {
+	background-color: #30b547;
+	border-radius: 5px 5px 0px 0px;
+	margin:0 auto;
+	font-size: 16px;
+	font-family:微軟正黑體;
+	color:#ffffff; 
+	margin-top: 5%;
+	height: 30px;
+	width: 80%;
+}
+.JoinPageViewBoxTitleItem {
+	margin:0 auto;
+	width: 92%;
+	height: 100%;
+	line-height:28px;
+}
+
+.JoinPageViewBoxList {
+	background-color: #98fb98;
+	border-radius: 0px 0px 5px 5px;
+	margin:0 auto;
+	font-family:微軟正黑體;
+	height: 80px;
+	width: 80%;
+	margin-bottom: 5%;
+}
+.JoinPageViewBoxListItems {
+	height: 40px;
+	width: 25%;
+	line-height:40px;
+	float: left;
+	text-align: center;
+}

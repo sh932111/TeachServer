@@ -6,4 +6,10 @@ function login($link,$table_name,$username,$password) {
 	return mysql_fetch_array($obj);
 }
 
+function selectAllTeacherData($link) {
+	$action = sprintf("SELECT * FROM rootTable");
+	$obj = mysql_query($action, $link);
+	return $obj;
+}
+
 ?>

@@ -1,5 +1,8 @@
 var viewData = [];
 
+var DepartmentsText;
+var DepartmentsId;
+
 function init() {
 	var JoinPage = {
 		id : "JoinPage",
@@ -22,6 +25,12 @@ function init() {
 		category : "TeacherUtil"
 	};
 	viewData = [JoinPage,LearningPage,LearningInformationPage,InformationPage];
+	var post_data = "";
+	callApi(post_data,getDepartmentApi,function(user_data){
+		DepartmentsText = user_data.department;
+		DepartmentsId = user_data.department_id;
+        
+    });
 	setUI();
 }
 

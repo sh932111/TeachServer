@@ -136,8 +136,9 @@ function formUpload(form) {
 
 		},
 		success: function(resp,st,xhr,$form) {
+			console.log(st);
+			console.log(xhr);
 			if(resp!="err") {
-			
 			}
 			else {
 

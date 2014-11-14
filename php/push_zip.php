@@ -21,6 +21,7 @@ if(!chmod($upload, 0777))
 include("lib/pclzip.lib.php");
 //解壓縮檔案並設定權限
 $archive = new PclZip($upload);
+
 if($archive->extract(PCLZIP_OPT_PATH, $folder, PCLZIP_OPT_SET_CHMOD, 0777) == 0)
 {
 	echo "PclZip extract error!";
