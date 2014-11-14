@@ -19,10 +19,10 @@ mysql_query("SET NAMES 'utf8'",$link);
 
 if (mysql_select_db('TeachUserDB')) {
 	if ($identity == 1) {
-		loginStatus(login($link,"userTable",$username,$password),"userTable");
+		loginStatus(login($link,"userTable",$username,$password),"userTable",$username,$update_time,$link);
 	}
 	else {
-		loginStatus(login($link,"rootTable",$username,$password),"rootTable");
+		loginStatus(login($link,"rootTable",$username,$password),"rootTable",$username,$update_time,$link);
 	}
 }
 else {
@@ -34,7 +34,7 @@ else {
 	exit();
 }
 
-function loginStatus($row,$table_name) {
+function loginStatus($row,$table_name,$username,$update_time,$link) {
 	$result = false;
 	$message = "登入失敗！";
 	if (!empty($row)) {
@@ -43,7 +43,7 @@ function loginStatus($row,$table_name) {
 	$data = array();
 	if ($result) {
 		$message = "登入成功！";
-		updateLoginTime($link,$table_name,$username,$update_time);
+		updateLoginTime($link,$table_name,$username,$update_time,$link);
 		$data["name"] = $row["name"];
 		$data["username"] = $row["username"];
 		$data["cellphone"] = $row["cellphone"];

@@ -3,31 +3,50 @@
 	height: 100%;
 	display:inline-block;
 }
-.JoinPageViewBox {
-	width: 85%;
-	height: 90%;
-	margin-left: 7.5%;
-	margin-top: 5%;
-	background-color: #e3ffe3;
+
+#JoinPageViewBox {
+	margin-left: 10%;
+	margin-top: 8%;
+	width: 80%;
+	height: 84%;
+	background-color: #e0ffff;
 	border-radius: 8px;
 	overflow-x: hidden; 
 	overflow-y: auto; 
 	white-space: nowrap;
 }
-.JoinPageViewItems {
-	margin:0 auto;
-	width: 90%;
-	height: auto;
-	margin-top: 5%;
-}
-.JoinPageViewItemsTitle {
-	width: 40%;
-	height:30px;
+
+.JoinPageViewBoxTitle {
+	background-color: #30b547;
 	border-radius: 5px 5px 0px 0px;
-	background-color: #08AA00;
+	margin:0 auto;
+	font-size: 16px;
+	font-family:微軟正黑體;
+	color:#ffffff; 
+	margin-top: 5%;
+	height: 30px;
+	width: 80%;
 }
-.JoinPageViewItemsName {
-	width: 40%;
-	height: 70px;
-	background-color: #ccf5c4;
+.JoinPageViewBoxTitleItem {
+	margin:0 auto;
+	width: 92%;
+	height: 100%;
+	line-height:28px;
+}
+
+.JoinPageViewBoxList {
+	background-color: #98fb98;
+	border-radius: 0px 0px 5px 5px;
+	margin:0 auto;
+	font-family:微軟正黑體;
+	height: 80px;
+	width: 80%;
+	margin-bottom: 5%;
+}
+.JoinPageViewBoxListItems {
+	height: 40px;
+	width: 25%;
+	line-height:40px;
+	float: left;
+	text-align: center;
 }
