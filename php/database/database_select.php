@@ -12,4 +12,11 @@ function selectAllTeacherData($link) {
 	return $obj;
 }
 
+function selectTeachCourse($link,$table_name) {
+	$action = sprintf("SELECT * FROM `$table_name`");
+	$obj = mysql_query($action, $link);
+	return $obj;
+}
+
+
 ?>

@@ -21,6 +21,12 @@ function login() {
 	callApi(post_data,loginApi,function(user_data){
 		alert(user_data.message);
 		if (user_data.result) {
+			var Bruce = {
+				'username' : user_data.username
+			}
+			var jsonData = JSON.stringify(Bruce);
+			window.sessionStorage["LearningData"] = jsonData;
+
 			if (loginIdentityId == 0) {
 				location.href = 'Teacher.html';
 			}

@@ -34,6 +34,8 @@ function creatRootCourse($link,$table_name) {
 function creatUserCourse($link,$table_name) {
 	$action  ="CREATE TABLE `$table_name`(
 		`course_id` VARCHAR(100) NOT NULL PRIMARY KEY,
+		`name` VARCHAR(100) NOT NULL,
+		`username` VARCHAR(100) NOT NULL,
 		`course_name`  VARCHAR(100)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`outline`  VARCHAR(999999)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
 		`create_time`  VARCHAR(100) NOT NULL

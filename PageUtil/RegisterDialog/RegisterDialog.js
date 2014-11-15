@@ -13,36 +13,23 @@ function dialogInit() {
 	callApi(post_data,getDepartmentApi,function(user_data){
 		RegisterViewBoxDepartments = user_data.department;
 		RegisterViewBoxDepartmentsId = user_data.department_id;
-        document.getElementById('RegisterViewBoxDepartment').options.length = 0;
-		for (var i = 0; i < RegisterViewBoxDepartments.length; i++) {
-			var item = new Option(RegisterViewBoxDepartments[i]);
-			if (i == 0) {
-				RegisterViewBoxDepartmentText = RegisterViewBoxDepartments[i];
-				RegisterViewBoxDepartmentId = RegisterViewBoxDepartmentsId[i];
-			}
-			item.value = RegisterViewBoxDepartmentsId[i];
-			document.getElementById('RegisterViewBoxDepartment').options.add(item);
-		}
-    });
+		var spinner = new getSpinner();
+		spinner.loadSpinner(document.getElementById('RegisterViewBoxDepartment'),RegisterViewBoxDepartments,RegisterViewBoxDepartmentsId);
+		RegisterViewBoxDepartmentText = spinner.objText;
+		RegisterViewBoxDepartmentId = spinner.objId;
 
-    document.getElementById('RegisterViewBoxIdentity').options.length = 0;
-    for (var i = 0; i < RegisterViewBoxIdentitys.length; i++) {
-    	var item = new Option(RegisterViewBoxIdentitys[i]);
-    	if (i == 0) {
-    		RegisterViewBoxIdentityText = RegisterViewBoxIdentitys[i];
-    		RegisterViewBoxIdentity = RegisterViewBoxIdentityIds[i];
-		}
-		item.value = RegisterViewBoxIdentityIds[i];
-		document.getElementById('RegisterViewBoxIdentity').options.add(item);
-    }
+    });
+	var spinner = new getSpinner();
+	spinner.loadSpinner(document.getElementById('RegisterViewBoxIdentity'),RegisterViewBoxIdentitys,RegisterViewBoxIdentityIds);
+	RegisterViewBoxIdentityText = spinner.objText;
+	RegisterViewBoxIdentity = spinner.objId;
 
 	var dialogView = document.getElementById("RegisterDialogView");
 	dialogView.addEventListener("click", function(e){
 		var tag = e.target.getElementsByTagName("div");
-		if (tag.length != 0) {            
-			$("#dialogView").empty();
-			var dialogView = document.getElementById("dialogView");
-			dialogView.className = "dialogHidden";
+		var get = e.toElement;//.getElementsByTagName('div');
+		if (get.id == "RegisterDialogView") {
+			dialogCancel();
 		}
 	});
 }

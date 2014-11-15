@@ -2,3 +2,18 @@
 	<script type='text/javascript' src='StudentUtil/LearningPage/LearningPage.js'></script>
 	<link rel='stylesheet' href='StudentUtil/LearningPage/LearningPage.css'>
 </div>
+<div class="LearningPageView">
+	<div class="LearningPageViewSelect">
+		課程：
+	   	<select id="LearningPageViewBoxIdentity" onChange="setLearningItems(this)" class="LearningPageSelect">
+	   	</select>
+	   	周數：
+	   	<select id="LearningPageViewBoxWeak" onChange="setLearningWeakItems(this)" class="LearningPageSelect">
+	   	</select>
+		<input type="button" value="放大" onclick="showBigIframe()" class="LearningPageViewBoxBt" />
+	</div>
+	<div class="LearningPageViewBox">
+		<iframe id="LearningPageViewBoxiframe" src="" scrolling="yes" frameborder="0">
+		</iframe>
+	</div>
+</div>

@@ -25,5 +25,12 @@ function insertAllCourse($link,$table_name,$name,$username,$department,$departme
 	return mysql_query($action,$link);
 }
 
+function insertClientCourse($link,$table_name,$course_id,$course_name,$outline,$create_time,$t_name,$t_username) {
+	$action = sprintf("INSERT INTO `$table_name`(
+		`course_id`,`name`,`username`,`course_name`,`outline`,`create_time`) 
+		VALUES ('%s','%s','%s','%s','%s','%s')",
+		$course_id,$t_name,$t_username,$course_name,$outline,$create_time);
+	return mysql_query($action,$link);
+}
 
 ?>

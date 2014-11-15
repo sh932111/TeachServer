@@ -1,0 +1,22 @@
+#LearningDialogView {
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+#LearningDialogViewPageViewBoxiframe {
+	width: 100%;
+	height: 95%;
+}
+.LearningDialogViewController {
+	background-color: #08AA00;
+	width: 100%;
+	height: 5%;
+}
+#LearningDialogViewControllerBt {
+	width: 43px;
+	height: 100%;
+	float: right;
+}
+#LearningDialogViewControllerBt img {
+	height: 95%;
+}

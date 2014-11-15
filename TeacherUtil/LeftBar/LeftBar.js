@@ -24,6 +24,10 @@ function leftBarInit(view_data) {
 function addFunction(obj) {
 	obj.addEventListener("click", function(e){
 		var go = this.value+"/"+this.id+"/"+this.id+".html";
-		setPageUtil('#pgMain',go);
+		setPageUtilCallBack('#pgMain',go,function(){
+			if (go == "StudentUtil/LearningPage/LearningPage.html") {
+				LearningPageInit ();
+			}
+		});
     });
 }

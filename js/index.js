@@ -8,8 +8,3 @@ function setUI() {
 	setPageUtil('#pgFooter','PageUtil/Footer/Footer.html');
 }
 
-function setPageUtil(page_id, page_link) {
-	$.get(page_link, function(data) {
-		$(page_id).html(data);
-	});
-}

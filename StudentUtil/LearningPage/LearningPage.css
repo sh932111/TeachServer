@@ -1,0 +1,37 @@
+.LearningPageView {
+	display:inline-block;
+	width: 100%;
+	height: 100%;
+}
+.LearningPageViewSelect {
+	margin: 0 auto;
+	width: 90%;
+	height: 10%;
+	margin-top: 5%;
+}
+.LearningPageViewBox {
+	margin: 0 auto;
+	width: 90%;
+	height: 85%;
+}
+.LearningPageSelect {
+	background: #08AA00;
+	font-size: 15px;
+	color: white;
+	border: 0;
+	border-radius: 0;
+	height: 30px;
+}
+#LearningPageViewBoxiframe {
+	width: 100%;
+	height: 100%;
+}
+.LearningPageViewBoxBt {
+	background: #08AA00;
+	font-size: 15px;
+	color: white;
+	border: 0;
+	float: right;
+	border-radius: 4px;
+	height: 30px;
+}	
