@@ -91,4 +91,17 @@ function creatAllCourseData($link,$table_name) {
 	
 	return mysql_query($action, $link);
 }
+
+function createUniversityData($link) {
+	$action  ="CREATE TABLE `universityTable`(
+		`name` VARCHAR(1000)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`phone` VARCHAR(1000) NOT NULL ,
+		`fax`  VARCHAR(1000) NOT NULL,
+		`address`  VARCHAR(1000)CHARACTER SET utf8 COLLATE utf8_unicode_ci  NOT NULL,
+		`url`  VARCHAR(1000) NOT NULL
+		);";
+	
+	return mysql_query($action, $link);
+}
+
 ?>

@@ -32,7 +32,7 @@ function setJoinDialogData(data,department,t_name,t_username){
 		add_div.className = "JoinDialogItemBt";
 		var add_bt = document.createElement("img");
 		add_bt.src = "img/addBt.png";
-		add_div.id=i;
+		add_div.id=i;//bug
 		addJoinDialogAction(add_div,data,t_name,t_username);
 		add_div.appendChild(add_bt);
 		JoinDialogItemBox.appendChild(title_div);
@@ -53,13 +53,14 @@ function setJoinDialogData(data,department,t_name,t_username){
 function addJoinDialogAction(obj,data,t_name,t_username) {
 	obj.addEventListener("click", function(e){
 		var time = getNowTime();
-		var post_data = "username="+"bbb"
-		+"&course_id="+data[obj.id].course_id
-		+"&course_name="+data[obj.id].course_name
-		+"&outline="+data[obj.id].outline
+		var post_data = "username="+userRecordData.username
+		+"&course_id="+data[this.id].course_id
+		+"&course_name="+data[this.id].course_name
+		+"&outline="+data[this.id].outline
 		+"&create_time="+time
 		+"&t_name="+t_name
 		+"&t_username="+t_username;
+		
 		callApi(post_data,addStudentCourseApi,function(res){
 			alert(res.message);
 			if (res.result) {

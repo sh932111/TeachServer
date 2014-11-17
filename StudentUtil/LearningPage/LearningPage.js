@@ -7,7 +7,7 @@ var LearningPageUserId;
 
 
 function LearningPageInit () {
-	var post_data = "username="+"bbb";
+	var post_data = "username="+userRecordData.username;
 	callApi(post_data,getStudentCourseApi,function(res){
 		userCourseArray = res;
 		setLearningPageSelect(res.list);

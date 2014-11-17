@@ -38,7 +38,7 @@ function addCreatePageView() {
 
 	edit_div.appendChild(edit_bt);
 	delete_div.appendChild(delete_bt);
-	box_div.appendChild(addFormInformation("aaa","root"));
+	box_div.appendChild(addFormInformation(userRecordData.username,"root"));
 	box_div.appendChild(title_div);
 	box_div.appendChild(edit_div);
 	box_div.appendChild(delete_div);
@@ -105,15 +105,14 @@ function createPageUpload() {
 	var push_data =  new Array();
 	for (var i = 0; i < obj_array.length; i++) {
 		var form = obj_array[i];
-		formUpload(form);
 		var title_input = form.getElementsByTagName('input')[2];
 		var id_input = form.getElementsByTagName('input')[3];
 		var outline_input = form.getElementsByTagName('textarea')[0];
 		var obj_select = form.getElementsByTagName('select')[0];
 		var time = getNowTime();
 		var post_data = {};
-		post_data['name'] = "aaa";
-		post_data['username'] = "aaa";
+		post_data['name'] = userRecordData.name;
+		post_data['username'] = userRecordData.username;
 		post_data['department'] = CreatePageDepartments[obj_select.value];
 		post_data['department_id'] = CreatePageDepartmentsIds[obj_select.value];
 		post_data['course_id'] = id_input.value;
@@ -136,9 +135,8 @@ function formUpload(form) {
 
 		},
 		success: function(resp,st,xhr,$form) {
-			console.log(st);
-			console.log(xhr);
 			if(resp!="err") {
+				
 			}
 			else {
 
@@ -151,10 +149,17 @@ function createPageCallApi(post) {
 	callApi(post,addTeachCourseApi,function(res){
 		var check = true;
 		var error_code = [];
+		var obj = document.getElementById('accordionPart');
+		var obj_array = obj.getElementsByTagName('form');
+	
 		for (var i = 0; i < res.length; i++) {
 			var get_data = res[i];
 			if (!get_data.result) {
 				check = false;
+			}
+			else {
+				var form = obj_array[i];
+				formUpload(form);
 			}
 			error_code.push(get_data.result);
 		}

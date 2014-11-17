@@ -25,6 +25,23 @@ function callApi(post_data,api,callback) {
     xmlhttp.send(post_data);
 }
 
+function callApiIndex(post_data,api,callback,resource) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST", api, true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.onreadystatechange = function() 
+    {
+        if(xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+        {
+            var return_data = xmlhttp.responseText;
+            var get_json = JSON.parse(return_data);
+            var user_data = get_json.data;
+            callback(user_data,resource);
+        }
+    }
+    xmlhttp.send(post_data);
+}
+
 function getNowTime() {
 	var dt = new Date();
 	var month = dt.getMonth()+1;

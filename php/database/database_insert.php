@@ -1,4 +1,27 @@
 <?php
+function insertUniversityData($link) {
+	
+	// $str = "";
+	// $file = "../lib/ulist.xlsx";
+	// $objPHPExcel = PHPExcel_IOFactory::load($file);
+	// $objPHPExcel->setActiveSheetIndex(0);
+	// $sheet = $objPHPExcel->getActiveSheet();
+	// $highestRow = $sheet->getHighestRow(); // 取得總行數
+	// $highestColumn = $sheet->getHighestColumn(); // 取得總列數
+	// for($j = 2;$j <= $highestRow; $j++) {
+	// 	for($k = 'A';$k <= $highestColumn; $k++) {
+	// 		$str .= $objPHPExcel->getActiveSheet()->getCell("$k$j")->getValue().'\\';
+	// 	}
+	// 	$strs = explode("\\",$str);
+	// 	$sql = "INSERT INTO universityTable(name,phone,fax,address,url) VALUES('$strs[0]','$strs[1]','$strs[2]','$strs[3]','$strs[4]')";
+	// 	if(!mysql_query($sql,$link)) {
+	// 		return false;
+	// 	}
+	// 	$str = "";
+	// }
+
+}
+
 
 function registerUser($link,$table_name,$name,$username,$password,$cellphone,$email,$department,$department_id,$create_time,$update_time) {
 	$action = sprintf("INSERT INTO `$table_name`(

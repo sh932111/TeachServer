@@ -4,7 +4,7 @@ var userRecordData;
 function init() {
 	var data = window.sessionStorage.getItem("LearningData");
 	userRecordData = JSON.parse(data);
-
+	
 	var CreatePage = {
 		id : "CreatePage",
 		title : "新增課程",
@@ -35,4 +35,3 @@ function setUI() {
 	setPageUtil('#pgLeft','TeacherUtil/LeftBar/LeftBar.html');
 	setPageUtil('#pgFooter','PageUtil/Footer/Footer.html');
 }
-
